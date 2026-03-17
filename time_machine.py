@@ -236,7 +236,7 @@ else:
         # 타임머신 이동 구현 visit 안한곳으로
         q = queue.popleft()
 
-        for w in wierd:
+        for w in wierd: # <---- 운이좋은듯 케이스 나빴으면 같은 시간에 대해서 여러번 호출됬을거같은데.. 아니네 왜 잘되는거지
             [r, c, d, v] = w
             if (time+path[q[0]][q[1]]+1) % v == 0:  # for 문으로 각각의 v에 대해 해야할듯 v 횟수일때
                 [r, c] = spread(r, c, d,map_2D)
