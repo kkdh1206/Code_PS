@@ -66,7 +66,7 @@ def shoot(i,j,P,color,dir_num): # 재귀문으로 색깔도 같이 넣어주기
     if F[i][j] == color:
         shoot(i+dx[dir_num],j+dy[dir_num],P,color,dir_num) # 바로 이동시킴
     # if P == 0:
-    #     return # power가 0이라도 할거없음 <--- 이거안하면 오염만되버림
+    #     return # power가 0이라도 할거없음 <--- 이거안하면 오염만되버림 <----- 아 여기는 밑에 else문때문에 저거 색다르면 아래께 실행되야하는데 P=0 이 아니면 실행되서 color 같은거도 실행되버리는 참사 발생!!!
     else:
         local_power = B[i][j]
         defense.add((i,j)) # 공격당했으니 표시 <--- 타입이 리스트는 바뀌는거라서 안된다고함 튜플만들어가짐 - set에는 변하지 않는 값만 들어갈수 있기 때문
